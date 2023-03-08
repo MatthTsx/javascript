@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components{
+    .inte-input{
+        @apply outline-none bg-transparent border-b mx-2 text-center w-fit shadow-2xl;
+    }
+    
+}
