@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { interactions } from '~/utils/scripts';
+import { interactions, sleep } from '~/utils/scripts';
 
 function Mouse_() {
     const [load, setLoad] = useState(true);
@@ -8,7 +8,7 @@ function Mouse_() {
 
     const Mouse = (e : MouseEvent, interact: boolean) => {
         try {
-            var mouse = document.getElementById("mouse") as HTMLDivElement
+            const mouse = document.getElementById("mouse") as HTMLDivElement
             const x = e.clientX - mouse.offsetWidth / 2,
                 y = e.clientY - mouse.offsetHeight / 2
 
@@ -43,8 +43,11 @@ function Mouse_() {
 
     useEffect(() => {
         if(!load) return
+        var cd = false
         setLoad(false)
         window.onmousemove = e => {
+            if(cd) return
+            cd = true
             const target = e.target as HTMLElement
             const interact = target.classList.contains("interact") ? true : false
             setInte(interact)
@@ -57,6 +60,7 @@ function Mouse_() {
                     return
                 }
             })
+            sleep(1000/60).then(() => cd = false)
         }
     },[load])
 
@@ -73,7 +77,7 @@ function Mouse_() {
         </div>
         <style>
             {`
-                *{
+                * * {
                     ${inte && 'cursor: none;'}
                 }
                 .hide{

@@ -17,7 +17,7 @@ function One() {
     },[milk,paes])
 
   return (
-    <div className='w-[50%] h-[50%] bg-blue-500 p-4'>
+    <div className='jss'>
         <input type={"number"} onChange={(e) => setPaes( parseFloat(e.target.value) )}
         className={"interact inte-input"}/>
         <input type={"number"} onChange={(e) => setMilk( parseFloat(e.target.value) )}

@@ -14,6 +14,8 @@ const inputs = () => {
     }
 }
 
+export const sleep = (ms : number) => new Promise(resolve => setTimeout(resolve, ms))
+
 export const interactions = [
     {i: "inte-input", func:inputs}
 ]
