@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { interactions, sleep } from '~/utils/scripts';
+import {ImSpinner11, ImSpinner9, ImBin, ImPlus, ImDiamonds} from "react-icons/im"
 
 function Mouse_() {
     const [load, setLoad] = useState(true);
@@ -55,7 +56,6 @@ function Mouse_() {
             setvisible(0)
             interactions.forEach((i,index) => {
                 if(target.classList.contains(i.i)){
-                    i.func()
                     setvisible(index + 1)
                     return
                 }
@@ -75,10 +75,30 @@ function Mouse_() {
             <div className='w-[10%] h-[15%] bg-black/75'/>
             <div className='w-[25%] h-[10%] bg-black/75 rounded-sm'/>
         </div>
+        <div className={`absolute w-full h-full flex flex-col items-center justify-center transition-all
+        ${visible != 2 && 'hide'}`}>
+            <ImSpinner9/>
+        </div>
+        <div className={`absolute w-full h-full flex flex-col items-center justify-center transition-all
+        ${visible != 3 && 'hide'}`}>
+            <ImSpinner11/>
+        </div>
+        <div className={`absolute w-full h-full flex flex-col items-center justify-center transition-all
+        ${visible != 4 && 'hide'}`}>
+            <ImBin/>
+        </div>
+        <div className={`absolute w-full h-full flex flex-col items-center justify-center transition-all
+        ${visible != 5 && 'hide'}`}>
+            <ImPlus/>
+        </div>
+        <div className={`absolute w-full h-full flex flex-col items-center justify-center transition-all
+        ${visible != 6 && 'hide'}`}>
+            <ImDiamonds/>
+        </div>
         <style>
             {`
                 * * {
-                    ${inte && 'cursor: none;'}
+                    ${inte && 'cursor: none !important;'}
                 }
                 .hide{
                     opacity: 0;

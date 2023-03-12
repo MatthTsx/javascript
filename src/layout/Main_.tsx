@@ -19,7 +19,7 @@ function Main_() {
             <div className='w-full h-[80%] bg-[#08080f] flex flex-col justify-evenly items-center' id="buttons">
               {[...Array(4)].map((a,i) => (
                 <button onClick={() => select_(i+1) } key={i}
-                className={`btn ${selected == i+1 && 'btn-act'}`}>
+                className={`btn ${selected == i+1 ? 'btn-act inte-btn-2' : 'inte-btn'} interact`}>
                   {i + 1}
                 </button>
               ))}

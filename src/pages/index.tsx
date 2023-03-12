@@ -1,5 +1,4 @@
 import { type NextPage } from "next";
-import Head from "next/head";
 import { Head_, Main_ } from "~/layout";
 
 const Home: NextPage = () => {

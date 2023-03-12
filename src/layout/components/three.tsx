@@ -7,7 +7,7 @@ function Three() {
     const calc = () => {
         try {
             const p = document.getElementById("response") as HTMLElement
-            p.textContent = (distancia/litros).toString()
+            p.textContent = (distancia/litros || 0).toString()
         } catch (error) {
             
         }
@@ -19,9 +19,15 @@ function Three() {
 
   return (
     <div className='jss'>
-        <input type="number" onChange={(e) => setLitros( parseFloat( e.target.value ) )} />
-        <input type="number" onChange={(e) => setDistancia( parseFloat( e.target.value ) )} />
-        <p id='response'></p>
+        <div>
+            <label>Litros: </label>
+            <input type="number" onChange={(e) => setLitros( parseFloat( e.target.value ) )} className="interact inte-input"/>
+        </div>
+        <div>
+            <label>Distancia:</label>
+            <input type="number" onChange={(e) => setDistancia( parseFloat( e.target.value ) )} className="interact inte-input"/>
+        </div>
+        <p>Consumo de KM/L: <span id="response"/></p>
     </div>
   )
 }

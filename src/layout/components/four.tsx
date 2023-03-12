@@ -7,7 +7,7 @@ function Four() {
     const calc = () => {
         try {
             const p = document.getElementById("response") as HTMLElement
-            p.textContent = (dollar_compra * dollarValue).toString()
+            p.textContent = (dollar_compra * dollarValue || 0).toString()
         } catch (error) {
             
         }
@@ -19,9 +19,15 @@ function Four() {
 
   return (
     <div className='jss'>
-        <input type="number" onChange={(e) => setDollarValue( parseFloat( e.target.value ) )} />
-        <input type="number" onChange={(e) => setDollar_compra( parseFloat( e.target.value ) )}/>
-        <p id="response"></p>
+        <div>
+            <label>Cotação do dólar</label>
+            <input type="number" onChange={(e) => setDollarValue( parseFloat( e.target.value ) )} className="interact inte-input"/>
+        </div>
+        <div>
+            <label>Quantidade de dólars: </label>
+            <input type="number" onChange={(e) => setDollar_compra( parseFloat( e.target.value ) )} className="interact inte-input"/>
+        </div>
+        <p>Preço: R$<span id="response"/></p>
     </div>
   )
 }

@@ -18,11 +18,15 @@ function One() {
 
   return (
     <div className='jss'>
-        <input type={"number"} onChange={(e) => setPaes( parseFloat(e.target.value) )}
-        className={"interact inte-input"}/>
-        <input type={"number"} onChange={(e) => setMilk( parseFloat(e.target.value) )}
-        className={"interact inte-input"}/>
-        <p id='response'></p>
+        <div>
+            <label>Quantidade de paes: </label>
+            <input type={"number"} onChange={(e) => setPaes( parseFloat(e.target.value) )} className={"interact inte-input"}/>
+        </div>
+        <div>
+            <label>Litros de leite: </label>
+            <input type={"number"} onChange={(e) => setMilk( parseFloat(e.target.value) )} className={"interact inte-input"}/>
+        </div>
+        <p>Preço: R$<span id="response"/></p>
     </div>
   )
 }
