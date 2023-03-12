@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {ImBin2} from "react-icons/im"
 import { Nota } from '~/utils/classes'
-import { addNota } from '~/utils/interfaces'
+import type { addNota } from '~/utils/interfaces'
 import { getMedias } from '~/utils/scripts'
 
 
@@ -13,7 +13,7 @@ function Two() {
   const AddNota_ = () => {
     try {
       if(addNota.nota == null || addNota.peso == null) return
-      const inputs = document.querySelectorAll("#inputs_add_nota input") as NodeListOf<HTMLInputElement>
+      const inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll("#inputs_add_nota input")
       const nota_ = new Nota({peso: addNota.peso, nota: addNota.nota})
       setNotas([...Notas, nota_])
       inputs.forEach((i) => {

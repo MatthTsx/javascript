@@ -1,4 +1,4 @@
-import { Nota } from "../classes"
+import type { Nota } from "../classes"
 
 export const sleep = (ms : number) => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -12,8 +12,8 @@ export const interactions = [
 ]
 
 export const getMedias = (notas: Array<Nota>) => {
-    var media = 0
-    var pesos = 0
+    let media = 0
+    let pesos = 0
     notas.forEach((n) => {
         media += n.nota * n.peso
         pesos += n.peso

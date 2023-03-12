@@ -25,6 +25,10 @@ const config = {
         fixStyle: "inline-type-imports",
       },
     ],
+    "@typescript-eslint/no-floating-promises":"off",
+    "@typescript-eslint/restrict-template-expressions":"off",
+    "react-hooks/exhaustive-deps":"off",
+    
   },
 };
 

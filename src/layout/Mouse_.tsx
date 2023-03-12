@@ -44,7 +44,7 @@ function Mouse_() {
 
     useEffect(() => {
         if(!load) return
-        var cd = false
+        let cd = false
         setLoad(false)
         window.onmousemove = e => {
             if(cd) return

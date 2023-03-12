@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { changeTab, getTab } from '~/utils/scripts/getTabs';
-import { One } from './components';
 import Mouse_ from './Mouse_'
 
 function Main_() {
