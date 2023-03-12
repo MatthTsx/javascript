@@ -9,6 +9,12 @@ const config = {
       parserOptions: {
         project: "tsconfig.json",
       },
+      rules:{
+        "@typescript-eslint/no-floating-promises":"off",
+        "@typescript-eslint/restrict-template-expressions":"off",
+        "react-hooks/exhaustive-deps":"off",
+        "@typescript-eslint/no-unsafe-assignment":"off"
+      }
     },
   ],
   parser: "@typescript-eslint/parser",
@@ -25,10 +31,6 @@ const config = {
         fixStyle: "inline-type-imports",
       },
     ],
-    "@typescript-eslint/no-floating-promises":"off",
-    "@typescript-eslint/restrict-template-expressions":"off",
-    "react-hooks/exhaustive-deps":"off",
-    
   },
 };
 
